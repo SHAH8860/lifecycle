@@ -1,0 +1,16 @@
+<div class="container m-auto border">
+  <h1 class="text-center"><strong>All LifeCycle Hook In Angular</strong></h1>
+  <div class="container border">
+    <h2 class="text-center">ngOnChangeHook</h2>
+    <button class="btn btn-primary" (click)="counter()">Change</button>
+    <app-change [data]="count"></app-change>
+  </div>
+  <div class="container mt-3 border">
+    <app-after-init>
+      <h4>This is the counter:{{count}}</h4>
+    </app-after-init>
+  </div>
+  <div class="container mt-3 border">
+    <h1 class="text-center" #title><strong>ngAfterViewInit</strong></h1>
+  </div>
+</div>

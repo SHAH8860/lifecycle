@@ -1,0 +1,40 @@
+<div class="container mt-5">
+ <form #user="ngForm" (ngSubmit)="OnSubmit(user)" autocomplete="off">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">UserName</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="username" ngModel required #username="ngModel">
+    <!-- only ngModel store formcontrol and #username="ngModel" store the reference in form of object -->
+    <div>
+      <small [ngStyle]="{color:'red'}" *ngIf="username.invalid && username.touched">*UserName is required</small>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="email" ngModel required email #email="ngModel">
+    <div>
+      <small  [style.color]="'red'" *ngIf="email.invalid && email.touched">*UserName is required</small>
+    </div>
+  </div>
+  <div>
+    <label for="exampleFormControlInput1" class="form-label">PhoneNumber</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="phone" [(ngModel)]="pnumber" required >
+    <!-- two way databinding -->
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Address</label>
+    <div class="container" #addressform="ngModelGroup" ngModelGroup="addressform">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Postalcode</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Country</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+    </div>
+
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!user.valid">Send</button>
+ </form>
+
+</div>
