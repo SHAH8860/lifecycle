@@ -11,6 +11,9 @@ import { HomeComponent } from './Component/home/home.component';
 import { TemplateFormComponent } from './Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './Forms/reactive-form/reactive-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HostDirective } from './Directive/host.directive';
+import { TodoComponent } from './Component/todo/todo.component';
+import { SubjectComponent } from './Component/subject/subject.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     HomeComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    HostDirective,
+    TodoComponent,
+    SubjectComponent
   ],
   imports: [
     BrowserModule,

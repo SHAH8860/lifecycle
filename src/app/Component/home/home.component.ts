@@ -8,6 +8,7 @@ import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, ViewChi
 export class HomeComponent implements OnInit,AfterViewInit,AfterViewChecked {
   @ViewChild("title") title!: ElementRef;
   public count:number=0
+  public data="hello"
 
   constructor() { }
 
@@ -24,6 +25,9 @@ export class HomeComponent implements OnInit,AfterViewInit,AfterViewChecked {
   }
   ngAfterViewChecked(): void {
     console.log("ngAfterViewChecked has been activated")
+  }
+  handle(event:any){
+    console.log(event)
   }
 
 }

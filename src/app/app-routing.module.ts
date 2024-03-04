@@ -6,6 +6,8 @@ import { AfterInitComponent } from './Component/after-init/after-init.component'
 import { ViewInitComponent } from './Component/view-init/view-init.component';
 import { TemplateFormComponent } from './Forms/template-form/template-form.component';
 import { ReactiveFormComponent } from './Forms/reactive-form/reactive-form.component';
+import { TodoComponent } from './Component/todo/todo.component';
+import { SubjectComponent } from './Component/subject/subject.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -14,6 +16,8 @@ const routes: Routes = [
   {path:'View',component:ViewInitComponent},
   {path:'temp',component:TemplateFormComponent},
   {path:'reactive',component:ReactiveFormComponent},
+  {path:'todo',component:TodoComponent},
+  {path:'subject',component:SubjectComponent}
 ];
 
 @NgModule({
