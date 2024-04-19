@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class TemplateFormComponent implements OnInit {
   @ViewChild("user") formvalue:NgForm | undefined
   public pnumber:number |undefined
+  
 
   constructor() { }
 

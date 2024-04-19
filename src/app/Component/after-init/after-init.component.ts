@@ -1,4 +1,4 @@
-import { AfterContentChecked, AfterContentInit, Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, Component, Input, OnInit, Output,EventEmitter, ContentChild, ElementRef } from '@angular/core';
 
 
 @Component({
@@ -9,13 +9,12 @@ import { AfterContentChecked, AfterContentInit, Component, Input, OnInit, Output
 export class AfterInitComponent implements OnInit,AfterContentInit,AfterContentChecked {
   @Input() child:string | undefined
   @Output() parent:EventEmitter<any>=new EventEmitter()
-
+  @ContentChild("Contentchild") hello?:ElementRef
+  @Output() another:EventEmitter<any>=new EventEmitter()
   constructor() { }
-
-
-
   ngOnInit(): void {
     this.parent.emit("Hello Papa")
+    this.another.emit("Another hello")
   }
   ngAfterContentInit(): void {
     console.log("Content has been Initialize,")
@@ -23,6 +22,10 @@ export class AfterInitComponent implements OnInit,AfterContentInit,AfterContentC
   ngAfterContentChecked(): void {
     console.log("Content has been changed")
   }
+  ColorChange(){
+    this.hello?.nativeElement.color
+  }
+
 
 
 }

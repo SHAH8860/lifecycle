@@ -14,6 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HostDirective } from './Directive/host.directive';
 import { TodoComponent } from './Component/todo/todo.component';
 import { SubjectComponent } from './Component/subject/subject.component';
+import { HelloPipe } from './Pipe/hello.pipe';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './Interceptor/auth.interceptor';
+import { GuardComponent } from './Component/guard/guard.component';
 
 @NgModule({
   declarations: [
@@ -27,15 +31,19 @@ import { SubjectComponent } from './Component/subject/subject.component';
     ReactiveFormComponent,
     HostDirective,
     TodoComponent,
-    SubjectComponent
+    SubjectComponent,
+
+    HelloPipe,
+     GuardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

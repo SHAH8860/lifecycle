@@ -8,6 +8,8 @@ import { TemplateFormComponent } from './Forms/template-form/template-form.compo
 import { ReactiveFormComponent } from './Forms/reactive-form/reactive-form.component';
 import { TodoComponent } from './Component/todo/todo.component';
 import { SubjectComponent } from './Component/subject/subject.component';
+import { GuardComponent } from './Component/guard/guard.component';
+import { CanactiveGuard } from './Guard/canactive.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -17,7 +19,8 @@ const routes: Routes = [
   {path:'temp',component:TemplateFormComponent},
   {path:'reactive',component:ReactiveFormComponent},
   {path:'todo',component:TodoComponent},
-  {path:'subject',component:SubjectComponent}
+  {path:'subject',component:SubjectComponent},
+  {path:'guard',component:GuardComponent,canActivate:[CanactiveGuard]}
 ];
 
 @NgModule({
